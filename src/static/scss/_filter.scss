@@ -1,0 +1,113 @@
+.filter {
+    .container {
+      padding-top: 15px;
+      padding-bottom: 15px;
+  
+      .filter__items {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        position: relative;
+  
+        @media only screen and (max-width : 767px) {
+          flex-direction: column;
+        }
+  
+        .filter__item {
+          width: 100%;
+          position: relative;
+          height: 45px;
+  
+          .input {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            width: 100%;
+  
+            input {
+              width: 100%;
+              color: var(--color);
+              padding: 15px 30px 15px 15px;
+              font-style: normal;
+              font-weight: 400;
+              font-size: 13px;
+              line-height: 15px;
+            }
+          }
+  
+          .select {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            width: 100%;
+
+            .more {
+              .option {
+                padding: 13px 0 13px 20px;
+
+                &:hover {
+                  background-color: var(--background-color-inversion);
+                  color: var(--color-inversion);
+                }
+              }
+            }
+  
+            .option {
+              color: var(--color);
+              padding: 15px 0 15px 15px;
+              font-style: normal;
+              font-weight: 400;
+              font-size: 13px;
+              line-height: 15px;
+  
+              &.created {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                padding: 20px;
+  
+                @media only screen and (max-width : 1024px) {
+                  flex-direction: column;
+                  gap: 15px;
+                }
+  
+                .created__item {
+                  line-height: 0;
+  
+                  input {
+                    padding: 15px;
+                    background-color: var(--created-background);
+                    color: var(--created-color);
+                    width: 100%;
+                    max-height: 45px;
+                    border-radius: 8px;
+
+                    @media only screen and (max-width : 1024px) {
+                      width: 110px;
+                    }
+                  }
+
+                  &.dash {
+                    width: 12px;
+                    height: 1px;
+                    background-color: var(--color);
+                  }
+                }
+  
+                &:hover {
+                  background-color: inherit;
+                  color: inherit;
+                }
+              }
+            }
+
+            
+          }
+
+          @media only screen and (max-width : 767px) {
+            &.active {
+              position: absolute;
+            }
+          }
+        }
+      }
+    }
+  }

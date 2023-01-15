@@ -1,0 +1,19 @@
+.header {
+    .container {
+      padding: 35px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .header__thema {
+        
+        .theme__btn {
+          cursor: pointer;
+
+          svg {
+            fill: var(--theme-btn);
+          }
+        }
+      }
+    }
+  }

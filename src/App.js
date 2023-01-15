@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useLayoutEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { BrowserRouter } from 'react-router-dom'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Header from './components/layout/Header/Header'
+import Main from './components/layout/Main/Main'
+import { getFilter } from './redux/filterSlice'
+
+
+const App = props => {
+  const dispatch = useDispatch()
+  const themeLocal = window?.localStorage?.getItem('theme').replace(/["]/g, '')
+
+  const [theme, setTheme] = useState(themeLocal)
+  const themeChange = () => {
+    if(theme === 'dark'){
+      setTheme('light')
+      localStorage.setItem('theme', JSON.stringify('light'))
+    } else {
+      setTheme('dark')
+      localStorage.setItem('theme', JSON.stringify('dark'))
+    }
+  }
+
+  useLayoutEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme)
+  }, [theme])
+
+  useEffect(() => {
+    dispatch(getFilter())
+  }, [dispatch])
+  return  <BrowserRouter>
+            <div className='wrapper'>
+              <Header themeChange={themeChange} />
+              <Main />
+            </div>
+          </BrowserRouter>
 }
 
 export default App;

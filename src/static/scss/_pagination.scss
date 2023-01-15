@@ -1,0 +1,50 @@
+.pagination {
+    padding-top: 40px;
+  
+    .page {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 20px;
+      min-width: 40px;
+      min-height: 40px;
+      border: 1px solid var(--pagination-border);
+      border-right: 0;
+      color: var(--color);
+      transition: all .5s ease 0s;
+
+      svg {
+        fill: var(--color);
+      }
+  
+      &:hover {
+        background-color: var(--page-background-hover);
+      }
+  
+      img {
+        padding: 3px;
+      }
+  
+      &.active {
+        background-color: var(--page-background-active);
+        color: var(--page-color-active);
+      }
+  
+      &:first-child {
+        border-radius: 10px 0px 0px 10px;
+      }
+  
+      &:last-child {
+        border-radius: 0 10px 10px 0;
+        border-right: 1px solid var(--pagination-border);
+      }
+  
+      &:disabled {
+        opacity: .3;
+
+        &:hover {
+          background-color: transparent;
+          cursor: default;
+        }
+      }
+    }
+  }
