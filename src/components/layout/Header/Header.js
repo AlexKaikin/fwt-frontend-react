@@ -2,7 +2,7 @@ import React from 'react'
 
 
 const Header = ({themeChange}) => {
-    return  <header className='section header'>
+    return  <header className='header'>
                 <div className='container'>
 
                     <div className='header__logo logo'>
@@ -27,7 +27,7 @@ const Header = ({themeChange}) => {
                             </svg>
                         </div>
                     </div>
-                    
+
                 </div>
             </header>
 }

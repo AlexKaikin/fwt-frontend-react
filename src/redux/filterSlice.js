@@ -62,7 +62,7 @@ export default filterSlice.reducer
 export const filterSelector = (state) => state.filter
 
 // thunk
-// загрузка товаров
+// загрузка авторов и локаций
 export const getFilter = () => async dispatch => {
   dispatch(setFilterStatus('loading'))
   try {

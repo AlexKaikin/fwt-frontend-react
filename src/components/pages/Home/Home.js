@@ -23,12 +23,12 @@ const Home = props => {
     return  <>
                 <Filter authors={authors} locations={locations} status={filterStatus} authorId={authorId} locationId={locationId} />
                 
-                <div className='section gallary'>
+                <section className='section gallary'>
                     <div className='container'>
                         <GalleryItems galleryItems={galleryItems} authors={authors} locations={locations} galleryStatus={galleryStatus} filterStatus={filterStatus} />
                         <Pagination pagesCount={pagesCount} currentPage={currentPage} currentPageChange={currentPageChange} />
                     </div>
-                </div>
+                </section>
             </>
 }
 

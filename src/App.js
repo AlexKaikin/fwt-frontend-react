@@ -1,6 +1,5 @@
 import React, { useEffect, useLayoutEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { BrowserRouter } from 'react-router-dom'
 
 import Header from './components/layout/Header/Header'
 import Main from './components/layout/Main/Main'
@@ -9,7 +8,7 @@ import { getFilter } from './redux/filterSlice'
 
 const App = props => {
   const dispatch = useDispatch()
-  const themeLocal = window?.localStorage?.getItem('theme').replace(/["]/g, '')
+  const themeLocal = localStorage.getItem('theme') ? localStorage.getItem('theme').replace(/["]/g, '') : 'dark'
 
   const [theme, setTheme] = useState(themeLocal)
   const themeChange = () => {
@@ -29,12 +28,11 @@ const App = props => {
   useEffect(() => {
     dispatch(getFilter())
   }, [dispatch])
-  return  <BrowserRouter>
-            <div className='wrapper'>
-              <Header themeChange={themeChange} />
-              <Main />
-            </div>
-          </BrowserRouter>
+
+  return  <div className='wrapper'>
+            <Header themeChange={themeChange} />
+            <Main />
+          </div>
 }
 
 export default App;

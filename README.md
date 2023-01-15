@@ -19,3 +19,6 @@
     <li>lodash.debounce: для отложенного запроса на сервер</li>
     <li>react-redux: useDispatch(), useSelector()</li>
 </ul>
+
+<h3>GitHub pages</h3>
+<a href="https://alexkaikin.github.io/fwt-test/" target="_blank">https://alexkaikin.github.io/fwt-test/</a>

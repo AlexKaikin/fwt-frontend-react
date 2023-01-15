@@ -9,7 +9,7 @@ const GalleryItems = ({galleryItems, authors, locations, galleryStatus, filterSt
     return <div className='gallery__items'>
             {
                 galleryStatus === 'success' && galleryItems.map(item => <div key={item.id} className='gallery__item item'>
-                    <img src={`https://test-front.framework.team/${item.imageUrl}`} alt={item.name} />
+                    <img src={`https://test-front.framework.team${item.imageUrl}`} alt={item.name} />
                     <div className='item__info info'>
                         <div className='info__item'>{item.name}</div>
 

@@ -5,13 +5,13 @@ import { galleryAPI } from '../api/api'
 const initialState = {
   galleryItems: [],
 
-  // статус загрузки товаров/товара
+  // статус загрузки картин
   galleryStatus: 'loading', // loading, success, error
 
   // пагинация
-  pagesCount: 0,    // количество страниц товаров
-  totalItems: 0,    // количество товаров на сервере
-  limitItems: 12,   // лимит товаров на страницу
+  pagesCount: 0,    // количество страниц картин
+  totalItems: 0,    // количество картин на сервере
+  limitItems: 12,   // лимит картин на страницу
   currentPage: 1,   // текущая страница
 }
 
@@ -45,7 +45,7 @@ export default gallerySlice.reducer
 export const gallerySelector = (state) => state.gallery
 
 // thunk
-// загрузка товаров
+// загрузка картин
 export const getGalleryItems = (nameValue, authorId, locationId, createdFrom, createdBefore, currentPage) => async dispatch => {
   dispatch(setGalleryStatus('loading'))
   try {
