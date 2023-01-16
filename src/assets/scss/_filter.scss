@@ -63,10 +63,16 @@
                 gap: 10px;
                 align-items: center;
                 padding: 20px;
+                justify-content: center;
   
                 @media only screen and (max-width : 1024px) {
                   flex-direction: column;
                   gap: 15px;
+                }
+
+                @media only screen and (max-width : 576px) {
+                  flex-direction: row;
+                  gap: 10px;
                 }
   
                 .created__item {
@@ -82,6 +88,10 @@
 
                     @media only screen and (max-width : 1024px) {
                       width: 110px;
+                    }
+
+                    @media only screen and (max-width : 576px) {
+                      width: 100%;
                     }
                   }
 
