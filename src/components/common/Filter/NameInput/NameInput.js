@@ -20,10 +20,10 @@ const NameInput = props => {
         nameSearchDebounce(e.target.value)
     }, [nameSearchDebounce])
 
-    const nameValueCleare = () => { // очистить поле названия
+    const nameValueCleare = useCallback(() => { // очистить поле названия
         setNameValue('')
-        dispatch(setNameQuery(''))
-    }
+        nameSearchDebounce('')
+    }, [nameSearchDebounce])
 
     return  <div className='input'>
                 <input onChange={nameChange} value={nameValue} type='text' placeholder='Name' />
