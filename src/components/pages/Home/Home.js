@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { filterSelector } from '../../../redux/filterSlice'
-import { gallerySelector, getGalleryItems, setCurrentPage } from '../../../redux/gallerySlice'
+import { filterSelector } from '../../../store/filterSlice'
+import { gallerySelector, getGalleryItems, setCurrentPage } from '../../../store/gallerySlice'
 import Filter from '../../common/Filter/Filter'
 import Pagination from '../../common/Pagination/Pagination'
 import GalleryItems from './GalleryItems/GalleryItems'

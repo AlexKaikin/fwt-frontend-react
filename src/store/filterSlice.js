@@ -5,7 +5,7 @@ import { filterAPI } from '../api/api'
 const initialState = {
     authors: [], // коллекция авторов
     locations: [], // коллекция локаций
-    filterStatus: 'loading', // статус загрузки
+    filterStatus: 'loading', // статус загрузки авторов и локаций
 
     nameQuery: '', // поиск по имени
     authorId: 0, // выбранный автор
@@ -29,7 +29,7 @@ export const filterSlice = createSlice({
     },
     setNameQuery: (state, action) => {
       state.nameQuery = action.payload
-  },
+    },
     setAuthor: (state, action) => {
         state.authorId = action.payload
     },

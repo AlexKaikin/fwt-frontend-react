@@ -24,4 +24,4 @@ const GalleryItems = ({galleryItems, authors, locations, galleryStatus, filterSt
         </div>
 }
 
-export default GalleryItems
+export default React.memo(GalleryItems)

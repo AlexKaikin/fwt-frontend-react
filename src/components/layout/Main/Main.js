@@ -8,4 +8,4 @@ const Main = props => {
             </main>
 }
 
-export default Main
+export default React.memo(Main)
